@@ -1,0 +1,179 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<script>
+
+
+		// Single Contact
+		function getSingleContactFromNativeCode() {
+
+  			//Android
+  			if (window.FTKAndroidInterface != undefined) {
+				 window.FTKAndroidInterface.getOneContact();
+
+            }
+        }
+
+        // Callback Single Contact
+        function callbackOneContact(obj) {
+          var result = obj.contact
+          if(result.includes("Contact Not")) {
+			alert(result)
+          }else
+		  {
+			const parsedData = JSON.parse(result);
+			alert( "Name : " +parsedData.name + "\n" + "Number : " + parsedData.phone + "\n" + "E-Mail : " + parsedData.email)
+          }
+
+        }
+
+        // All Contacts
+        function getContactsFromNativeCode() {
+			//Android
+			if (window.FTKAndroidInterface != undefined) {
+				window.FTKAndroidInterface.getContacts();
+				}
+			}
+
+        // Callback All Contacts
+        function callbackContacts(obj) {
+            const parsedData = JSON.parse(obj.contact);
+            alert("Cached : "+parsedData.cached)
+
+        }
+
+        // Callback Contacts Count
+        function contactCount(count) {
+			setTitle(count + ' Contact(s)')
+        }
+
+        //  Qr code
+        function scanQRCode() {
+
+  			//Android
+  			if (window.FTKAndroidInterface != undefined) {
+        		window.FTKAndroidInterface.scanQRCode();
+            }
+        }
+
+        // scanning QR code from camera
+        function selectQRCodeFromPhotos() {
+
+        //Android
+        if (window.FTKAndroidInterface != undefined) {
+            window.FTKAndroidInterface.selectQRCodeFromPhotos();
+            }
+        }
+
+        // Callback Qr code
+        function callbackQRCode(obj) {
+			const parsedData = JSON.parse(obj.code);
+			alert( "Result : " +parsedData.qrCode)
+
+        }
+
+        // take photo from camera
+        function takePhotoFromCamera() {
+
+			//Android
+			if (window.FTKAndroidInterface != undefined) {
+				window.FTKAndroidInterface.takePhoto();
+			}
+		}
+
+        // Callback takePhoto
+        function callbackPhoto(obj) {
+
+        alert(obj.photo)
+       // setTitle(obj.photo);
+        }
+
+        // take photo from camera
+        function checkPermissionStatus() {
+        //iOS
+        if (window.webkit != undefined) {
+            window.webkit.messageHandlers.checkPermissions.postMessage({});
+            }
+
+        //Android
+        if (window.FTKAndroidInterface != undefined) {
+            window.FTKAndroidInterface.checkPermissions();
+            }
+        }
+
+        // Callback Permission
+        function callbackPermissions(obj) {
+
+        alert(obj.permission)
+       // setTitle(obj.photo);
+        }
+
+		function timeOut(){
+			//Android
+			if (window.FTKAndroidInterface != undefined) {
+
+				window.FTKAndroidInterface.FTKTimeOut();
+
+			}
+		}
+
+
+        function dismissPopup() {
+  			//iOS
+  			if (window.webkit != undefined) {
+        		window.webkit.messageHandlers.dismissPopup.postMessage({});
+            }
+
+  			//Android
+  			if (window.FTKAndroidInterface != undefined) {
+        		window.FTKAndroidInterface.dismissPopup();
+            }
+        }
+
+        function titleToColor(color) {
+          var title = document.getElementById("title");
+            title.style.color = color;
+        }
+
+    		function setTitle(text) {
+    			var title = document.getElementById("title");
+    			title.innerHTML = text;
+    		}
+
+    </script>
+<body>
+
+<center>
+
+    <br><br>
+    <h1 id="title">Bridge Sdk</h1>
+    <br><br>
+
+    <button type="button" onclick="getSingleContactFromNativeCode()">Get Contact</button>
+    <br><br>
+
+    <button type="button" onclick="getContactsFromNativeCode()">Get Contacts</button>
+    <br><br>
+
+    <button type="button" onclick="scanQRCode()">Scan QR Code</button>
+    <br><br>
+
+    <button type="button" onclick="selectQRCodeFromPhotos()">Scan QR Code From Photos</button>
+    <br><br>
+
+    <button type="button" onclick="takePhotoFromCamera()">Take a Photo</button>
+    <br><br>
+
+    <button type="button" onclick="checkPermissionStatus()">Check Permission</button>
+    <br><br>
+
+    <button type="button" onclick="timeOut()">Session Time Out</button>
+    <br><br>
+
+    <button type="button" onclick="dismissPopup()">Dismiss Popup</button>
+    <script> titleToColor('Blue') </script>
+
+</center>
+</body>
+</html>
