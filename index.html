@@ -73,14 +73,14 @@
 
         }
 		
-		// share qr code
-		function shareQRCode(){
+	// share qr code
+	function shareQRCode(){
 		
-			if (window.FTKAndroidInterface != undefined) {
-				window.FTKAndroidInterface.sharePhoto(base64Image:"", text:"Dhayalu", url: "https://dhayaaperumal.github.io/demo/index.html")
-			}
-		
+		if (window.FTKAndroidInterface != undefined) {
+			window.FTKAndroidInterface.sharePhoto(base64Image:"", text:"Dhayalu", url: "https://dhayaaperumal.github.io/demo/index.html")
 		}
+		
+	}
 
         // take photo from camera
         function takePhotoFromCamera() {
@@ -171,8 +171,7 @@
     <button type="button" onclick="selectQRCodeFromPhotos()">Scan QR Code From Photos</button>
     <br><br>
 	
-	<button type="button" onclick="shareQRCode()">Share QR Code</button>
-    <br><br>
+    
 
     <button type="button" onclick="takePhotoFromCamera()">Take a Photo</button>
     <br><br>
