@@ -23,7 +23,7 @@
           }else
 		  {
 			const parsedData = JSON.parse(result);
-			alert( "Name : " + result)
+			alert( "Result : " + result)
           }
 
         }
@@ -116,8 +116,12 @@
         // Callback takePhoto
         function callbackPhoto(obj) {
 
-        alert(obj.photo)
-       // setTitle(obj.photo);
+			var img = document.createElement('img');
+			var base64String = obj.photo;
+			
+			img.setAttribute('src', "data:image/jpg;base64,"+base64String);
+			document.getElementById('body').appendChild(img);
+        
         }
 
         // take photo from camera
@@ -170,7 +174,7 @@
     		}
 
     </script>
-<body>
+<body id="body">
 
 <center>
 
