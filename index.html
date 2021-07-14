@@ -119,7 +119,8 @@
 			var img = document.createElement('img');
 			var base64String = obj.photo;
 			
-			img.setAttribute('src', "data:image/jpg;base64,"+base64String);
+			img.setAttribute('src', 'data:image/png;base64,'+base64String);
+			img.width = img.height = 150;
 			document.getElementById('body').appendChild(img);
         
         }
