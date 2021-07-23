@@ -136,7 +136,7 @@
 			
 			img.setAttribute('src', 'data:image/png;base64,'+base64String);
 			img.width = img.height = 150;
-			document.getElementById('body').appendChild(img);
+			document.getElementById('image').setAttribute('src', 'data:image/png;base64,'+base64String);
         
         }
 
@@ -227,6 +227,8 @@
 
     <button type="button" onclick="timeOut()">Session Time Out</button>
     <br><br>
+	
+	<img id = "image">
 
     <script> titleToColor('Blue') </script>
 
