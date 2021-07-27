@@ -166,6 +166,23 @@
 
 			}
 		}
+	
+	// get location from sdk
+        function getLocation() {
+        
+
+        //Android
+        if (window.FTKAndroidInterface != undefined) {
+            window.FTKAndroidInterface.getLocation();
+            }
+        }
+
+        // Callback Location
+        function callbackLocation(obj) {
+
+        alert(obj.location)
+       // setTitle(obj.photo);
+        }
 
 
         function dismissPopup() {
@@ -227,6 +244,9 @@
     <br><br>
 
     <button type="button" onclick="timeOut()">Session Time Out</button>
+    <br><br>
+	
+	<button type="button" onclick="getLocation()">Get Locationt</button>
     <br><br>
 	
 	<img id = "image">
