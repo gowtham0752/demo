@@ -43,6 +43,11 @@
 
         // Callback All Contacts
         function callbackContacts(obj) {
+		alert("Object : "+obj)
+		//iOS
+		if(window.webkit != undefined){
+			alert("iOS")
+		}
             const parsedData = JSON.parse(obj.contact);
 		var contact = localStorage.getItem("contact");
 		if (parsedData.cached){
