@@ -30,6 +30,11 @@
 
         // All Contacts
         function getContactsFromNativeCode() {
+		
+		//iOS
+		if(window.webkit != undefined){
+			window.webkit.messageHandlers.getContacts.postMessage({});
+		}
 			//Android
 			if (window.FTKAndroidInterface != undefined) {
 				window.FTKAndroidInterface.getContacts();
