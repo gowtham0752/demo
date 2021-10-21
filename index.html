@@ -205,6 +205,29 @@
         		window.FTKAndroidInterface.dismissPopup();
             }
         }
+	
+		// Device Information
+		function getDeviceInformation() {
+
+  			//Android
+  			if (window.FTKAndroidInterface != undefined) {
+				 window.FTKAndroidInterface.getDeviceInfo();
+
+            }
+        }
+
+        // Callback Device Information
+        function callbackDeviceInfo(obj) {
+          var result = obj.deviceInfo
+          if(result.includes("Device Not")) {
+			alert(result)
+          }else
+		  {
+			const parsedData = JSON.parse(result);
+			alert( "Result : " + result)
+          }
+
+        }
 
         function titleToColor(color) {
           var title = document.getElementById("title");
@@ -261,6 +284,9 @@
 	<button type="button" onclick="dismissPopup()">Dismiss Popup</button>
     <br><br>
 	
+	<button type="button" onclick="getDeviceInformation()">Get DeviceInfo</button>
+	
+    <br><br>
 	<img id = "image">
 
     <script> titleToColor('Blue') </script>
