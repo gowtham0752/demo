@@ -1,0 +1,7 @@
+-keepclassmembers class * { @android.webkit.JavascriptInterface <methods>;}
+-keepattributes JavascriptInterface
+-keepattributes *Annotation*
+-keep class  com.fiserv.dps.mobile.sdk.bridge.model.Zelle** {*;}
+-keep class  com.fiserv.dps.mobile.sdk.bridge.controller.Bridge** {*;}
+-keep class  com.fiserv.dps.mobile.sdk.bridge.view.BridgePopup** {*;}
+-keep class  com.fiserv.dps.mobile.sdk.bridge.view.BridgeView** {*;}
