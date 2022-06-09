@@ -2,32 +2,8 @@ https://dhayaaperumal.github.io/demo/index.html
 
  https://fdc-qa.my.idaptive.app/login?yfirtnecapplogin=true&appKey=5f3ae2d2-7912-41fa-ad1b-f9f42b272639&customerId=AAT0112&yfirtnecrun=true
 
-try {
-
-    val listdata = ArrayList<String>()
-        for (i in 0 until jArray.length()) {
-            listdata.add(jArray.get(i).toString())
-        }
-    val distinct = listdata.toSet().toList();
-     val tempArray = JSONArray()
-    val uniqueset: MutableSet<String> = HashSet()
-    for (i in 0 until jArray.length()) {
-        val jobject = jArray[i] as JSONObject
-        val keys: MutableIterator<String> = jobject.keys()
-        val it = keys.iterator()
-        while (it.hasNext()) {
-            val currentKey = it.next()
-            val jsonvalue = jobject[currentKey] as String
-            if (uniqueset.contains(jsonvalue)) {
-                continue
-            } else {
-                uniqueset.add(jsonvalue)
-                tempArray.put(jArray[i])
-            }
+android.libraryVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFileName = "ZelleSDK_1.5.10.aar"
         }
     }
-    jArray1 = tempArray
-    
-}finally{
-     js = "var cachedContacts = ${jArray1};"
- }
