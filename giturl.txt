@@ -2,8 +2,8 @@ https://dhayaaperumal.github.io/demo/index.html
 
  https://fdc-qa.my.idaptive.app/login?yfirtnecapplogin=true&appKey=5f3ae2d2-7912-41fa-ad1b-f9f42b272639&customerId=AAT0112&yfirtnecrun=true
 
-android.libraryVariants.all { variant ->
-        variant.outputs.each { output ->
-            output.outputFileName = "ZelleSDK_1.5.10.aar"
-        }
-    }
+
+ https://certtransfers.fta.cashedge.com/popnet/faces/loginServlet?INSTITUTION_ID=88871085&KEY=061bcda43d829393ad9c9e1597d339b8
+
+https://certsso.ft.cashedge.com/signupGRel?
+INSTITUTION_ID=88871085&USER_FI_NUMBER=elbbecus0323a&FIRST_NAME=Kara&LAST_NAME=Aanemone&EMAIL=elbbecu0323a@ce.com&STREET=4501%20SCENERY%20Dr&CITY=Sunnyvale&STATE=MN&ZIP=94085&SSN=914-11-8515&DOB=07/05/1977&PHONE=951-855-5001&ANUM0=1000146397155&ACCOUNT_NUMBER0=1000146397155&ADSC0=Savings&ATYP0=0&ASTAT0=0&BALANCE0=150000&ASEG0=&RTN0=325081403&ANUM1=10055522&ACCOUNT_NUMBER1=10055522&ADSC1=Checking&ATYP1=1&ASTAT1=0&BALANCE1=150000&ASEG1=&RTN1=325081403&DRV_LIC=258963177&DRV_LIC_STATE=MN&USER_IN_GOOD_STANDING=&CE_APPLICATION_CODE=POP
