@@ -11,3 +11,208 @@ https://certtransfers.fta.cashedge.com/popnet/faces/loginServlet
 88850093
 
 https://certsso.ft.cashedge.com/signupGRel?INSTITUTION_ID=88850093&USER_FI_NUMBER=999992&FIRST_NAME=JONATHAN&LAST_NAME=CONSUMER&STREET=15442+6TH+ST&CITY=VICTORVILLE&STATE=CA&ZIP=92395-3509&SSN=111114321&EMAIL=JLLEPE%40SCHOOLSFIRSTFCU.ORG&CE_APPLICATION_CODE=POP&DOB=01%2f01%2f1984&PHONE=714-258-4000&PHONE_TYPE=M&ANUM0=400999992704&ATYP0=1&ASTAT0=0&BALANCE0=-13.75&RTN0=322282001&ADSC0=70+-+FREE+CHECKING&ACCOUNT_NUMBER0=0000XXXX92&ANUM1=400999992712&ATYP1=1&ASTAT1=0&BALANCE1=1&RTN1=322282001&ADSC1=71+-+INVESTMENT+CHECKING&ACCOUNT_NUMBER1=0000XXXX92&
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:itemBackground"
+    tools:context=".activity.ContactDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/toolbar_title"
+        app:titleTextColor="@color/black"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:contentDescription="@string/app_name"
+                app:tint="?android:textColor" />
+
+            <TextView
+                android:id="@+id/back_press"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/toolbar_title"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="?android:textColor"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/shape_layout"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_baseline_perm_identity_24"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/cv_contact_profile"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:foregroundGravity="center"
+            android:background="@drawable/circle"
+            android:contentDescription="@string/app_name" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_contact_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="?android:textColor"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/linear_lay_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/cv_call"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="?android:textColor"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/call"
+                    app:tint="?android:textColor"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/lightgrey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/cv_message"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:backgroundTint="?android:textColor"
+                android:background="@drawable/circle">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/message"
+                    app:tint="?android:textColor"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/lightgrey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/cv_video"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:backgroundTint="?android:textColor"
+                android:background="@drawable/circle">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/video"
+                    app:tint="?android:textColor"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/lightgrey"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="?android:tint" />
+
+    <ListView
+        android:id="@+id/rcv_contact_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:divider="@null"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="12dp"
+       />
+
+</LinearLayout>
