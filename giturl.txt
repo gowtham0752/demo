@@ -1,48 +1,5 @@
 https://dhayaaperumal.github.io/demo/index.html
 
-const val DEFAULT_LOADER_COLOR = "#A1808080"
 
-fun getLoaderInfo() {
-        if (config.icon.isNotEmpty() && config.msg.isNotEmpty() && config.colorCode.isNotEmpty()) {
-            val imageBytes = Base64.decode(config.icon, Base64.DEFAULT)
-            val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-            img.setImageBitmap(bitmap)
-            linear_color.setBackgroundColor(Color.parseColor(config.colorCode))
-            txt.text = config.msg
-            loading.visibility = VISIBLE
-        } else if (config.icon.isNotEmpty() && config.msg.isNotEmpty() && config.colorCode.isEmpty()) {
-            val imageBytes = Base64.decode(config.icon, Base64.DEFAULT)
-            val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-            img.setImageBitmap(bitmap)
-            linear_color.setBackgroundColor(Color.parseColor(DEFAULT_LOADER_COLOR))
-            txt.text = config.msg
-            loading.visibility = VISIBLE
-        } else if (config.icon.isNotEmpty() && config.msg.isEmpty() && config.colorCode.isNotEmpty()) {
-            val imageBytes = Base64.decode(config.icon, Base64.DEFAULT)
-            val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-            img.setImageBitmap(bitmap)
-            linear_color.setBackgroundColor(Color.parseColor(config.colorCode))
-            txt.visibility = GONE
-            loading.visibility = VISIBLE
-        } else if (config.icon.isEmpty() && config.msg.isNotEmpty() && config.colorCode.isNotEmpty()) {
-            img.visibility = GONE
-            linear_color.setBackgroundColor(Color.parseColor(config.colorCode))
-            txt.text = config.msg
-            loading.visibility = VISIBLE
-        } else if (config.icon.isNotEmpty() && config.msg.isEmpty() && config.colorCode.isEmpty()) {
-            val imageBytes = Base64.decode(config.icon, Base64.DEFAULT)
-            val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-            img.setImageBitmap(bitmap)
-            linear_color.setBackgroundColor(Color.parseColor(DEFAULT_LOADER_COLOR))
-            txt.visibility = GONE
-            loading.visibility = VISIBLE
-        } else if ( config.icon.isEmpty() && config.msg.isNotEmpty() &&  config.colorCode.isEmpty()) {
-            img.visibility = GONE
-            linear_color.setBackgroundColor(Color.parseColor(DEFAULT_LOADER_COLOR))
-            txt.text = config.msg
-            loading.visibility = VISIBLE
-        } else {
-            loading.visibility = GONE
-            progress_loading.visibility = VISIBLE
-        }
-    }
+        String image  = "iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAACXBIWXMAAAsSAAALEgHS3X78AAACcFBMVEVHcEyVEd6VEd6VEd6VEd6VEd6VEd6VEd6VEN6VEN6VEd6VEd6VEd6UEd2VEd2VEN6VEd6VEd6UEd6VEd6VEN6UEN2VEN2VEN6VEN2VEN2VEd6VEN6VEN6VEN2VEN6VEN2VEd6VEN2VEN6VEN6VEN6UEN6VEN6VEd6VEd6VEN6VEN6UEN2UEd6VEN6VEN6VEN6VEN6VEN6VEN6VEN6UEN6UEN6VEN6VEN6UEN2VEN6VEN6VEN6VEd6VEd6VEd6VEN6VEd6VEd6VEN6VEN6VEN6VEd6VEd6VEN6VEd6VEN6VEN6VEN6VEN6VEN6VEN6VEd6VEd6VEd6VEd6VEN6VEN6VEN6VEd6UEd2VEd6VEN6VEN6VEd6VEd6VEN6UEN6VEN6VEd6VEN6VEN6UEd6VEd6VEd6VEd6VEd6VEN6UEN2VEd6VEd6UEd6VEd6VEd6VEd6VEd6VEd6VEN6VEd6VEd6VEd6UEd2VEN6UEN6VEN6VEd6VEd6VEN6VEd6VEd6UEN2VEd6VEN6VEd6VEd6VEN6VEd6VEN6VEd6VEN6VEd6VEd6UEN6VEd6VEd6VEd6VEN6VEd6VEd6VEN6VEN6VEd6VEd2VEd6VEd6VEd6VEd6VEd6VEd6VEN6VEd6VEd6VEd6VEN6VEd6UEN6VEd6VEd6VEN6VEd6VEd6VEN2UEd2VEd6VEd6VEd6VEd2VEd6VEN2VEd6VEd6VEd6VEd6VEd6dEuuXEeGcEeidEeqWEeCbEeecEemeEuueEuyZEeSaEeaaEeWYEeKbEeiYEeOgEu6fEu2VEd+XEeKZEeWfEu6WEd+dEeudEemiEvGmEveXEeC7FSChAAAAtHRSTlMA/JHt+/0C/gMBHcgn/v4j8fr+d/4C/en8AjWIif4W+lv7/Sa1/PvsDb6V/PsV9AkgBM78Av4btRzycowY2t9H0x6dWSTllD/4tMAZMYb53GXMr/AtB9T7jpPF62LzEShj0cT9uBzDIl/+XFSRwkuiewV4K+d04Q/9w9Z9QZoa/U+yj+LZ0HYTMO6EBKm9gSoLOgvG9ZZrq2nJf6cGb0yjjTgMRJ73qEm2ulI8VTxO6Qxhy5dQ69v5AAAKbklEQVR42u2c+VcUxxbH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";
+
