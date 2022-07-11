@@ -1,15 +1,46 @@
 https://dhayaaperumal.github.io/demo/index.html
 
- https://fdc-qa.my.idaptive.app/login?yfirtnecapplogin=true&appKey=5f3ae2d2-7912-41fa-ad1b-f9f42b272639&customerId=AAT0112&yfirtnecrun=true
- 
- https://rxp-ui-test1.checkfreeweb.com/ftk_v22_3/?INSTITUTION_ID=session&KEY=95ec5df7c464e1cf42d4fc825a202d6b
- 
- https://qa-ft.onefiserv.net/signupGRel?INSTITUTION_ID=88850094&USER_FI_NUMBER=ishan&FIRST_NAME=ishan&LAST_NAME=kishan&EMAIL=ishankishan2@gmail.com&STREET=9384%20POODLE%20LN&STREET2=%20&CITY=KAILAU&STATE=HI&ZIP=96743344&SSN=856654701&DOB=02/01/1999&PHONE=9245612600&ANUM0=23678120287&ACCOUNT_NUMBER0=23678120287&ADSC0=Checking%201&ATYP0=1&ASTAT0=0&BALANCE0=3200&ASEG0=&RTN0=071025661&ANUM1=55688113&ACCOUNT_NUMBER1=55688113&ADSC1=Saving%201&ATYP1=0&ASTAT1=0&BALANCE1=4500&ASEG1=&RTN1=071025661&ANUM2=385671955&ACCOUNT_NUMBER2=385671955&ADSC2=Checking%201&ATYP2=1&ASTAT2=0&BALANCE0=3200&ASEG2=&RTN2=071025661&ANUM3=40344442225&ACCOUNT_NUMBER3=40344442225&ADSC3=Saving%201&ATYP3=0&ASTAT3=0&BALANCE3=4500&ASEG3=&RTN3=071025661&ANUM4=891805038&ACCOUNT_NUMBER4=891805038&ADSC4=Saving%201&ATYP4=0&ASTAT4=0&BALANCE4=4500&ASEG4=&RTN4=071025661&DRV_LIC=614768263&DRV_LIC_STATE=AK&USER_IN_GOOD_STANDING=&CE_APPLICATION_CODE=POP&CSS_URL%27
-
-
-https://certtransfers.fta.cashedge.com/popnet/faces/loginServlet
-88850093
-
-https://certsso.ft.cashedge.com/signupGRel?INSTITUTION_ID=88850093&USER_FI_NUMBER=999992&FIRST_NAME=JONATHAN&LAST_NAME=CONSUMER&STREET=15442+6TH+ST&CITY=VICTORVILLE&STATE=CA&ZIP=92395-3509&SSN=111114321&EMAIL=JLLEPE%40SCHOOLSFIRSTFCU.ORG&CE_APPLICATION_CODE=POP&DOB=01%2f01%2f1984&PHONE=714-258-4000&PHONE_TYPE=M&ANUM0=400999992704&ATYP0=1&ASTAT0=0&BALANCE0=-13.75&RTN0=322282001&ADSC0=70+-+FREE+CHECKING&ACCOUNT_NUMBER0=0000XXXX92&ANUM1=400999992712&ATYP1=1&ASTAT1=0&BALANCE1=1&RTN1=322282001&ADSC1=71+-+INVESTMENT+CHECKING&ACCOUNT_NUMBER1=0000XXXX92&
-
-
+fun getLoaderInfo() {
+        if (config.icon.isNotEmpty() && config.msg.isNotEmpty() && config.colorCode.isNotEmpty()) {
+            val imageBytes = Base64.decode(config.icon, Base64.DEFAULT)
+            val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+            img.setImageBitmap(bitmap)
+            linear_color.setBackgroundColor(Color.parseColor(config.colorCode))
+            txt.text = config.msg
+            loading.visibility = VISIBLE
+        } else if (config.icon.isNotEmpty() && config.msg.isNotEmpty() && config.colorCode.isEmpty()) {
+            val imageBytes = Base64.decode(config.icon, Base64.DEFAULT)
+            val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+            img.setImageBitmap(bitmap)
+            linear_color.setBackgroundColor(Color.parseColor(DEFAULT_LOADER_COLOR))
+            txt.text = config.msg
+            loading.visibility = VISIBLE
+        } else if (config.icon.isNotEmpty() && config.msg.isEmpty() && config.colorCode.isNotEmpty()) {
+            val imageBytes = Base64.decode(config.icon, Base64.DEFAULT)
+            val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+            img.setImageBitmap(bitmap)
+            linear_color.setBackgroundColor(Color.parseColor(config.colorCode))
+            txt.visibility = GONE
+            loading.visibility = VISIBLE
+        } else if (config.icon.isEmpty() && config.msg.isNotEmpty() && config.colorCode.isNotEmpty()) {
+            img.visibility = GONE
+            linear_color.setBackgroundColor(Color.parseColor(config.colorCode))
+            txt.text = config.msg
+            loading.visibility = VISIBLE
+        } else if (config.icon.isNotEmpty() && config.msg.isEmpty() && config.colorCode.isEmpty()) {
+            val imageBytes = Base64.decode(config.icon, Base64.DEFAULT)
+            val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+            img.setImageBitmap(bitmap)
+            linear_color.setBackgroundColor(Color.parseColor(DEFAULT_LOADER_COLOR))
+            txt.visibility = GONE
+            loading.visibility = VISIBLE
+        } else if ( config.icon.isEmpty() && config.msg.isNotEmpty() &&  config.colorCode.isEmpty()) {
+            img.visibility = GONE
+            linear_color.setBackgroundColor(Color.parseColor(DEFAULT_LOADER_COLOR))
+            txt.text = config.msg
+            loading.visibility = VISIBLE
+        } else {
+            loading.visibility = GONE
+            progress_loading.visibility = VISIBLE
+        }
+    }
