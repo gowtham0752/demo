@@ -1,5 +1,7 @@
 https://dhayaaperumal.github.io/demo/index.html
 
+const val DEFAULT_LOADER_COLOR = "#A1808080"
+
 fun getLoaderInfo() {
         if (config.icon.isNotEmpty() && config.msg.isNotEmpty() && config.colorCode.isNotEmpty()) {
             val imageBytes = Base64.decode(config.icon, Base64.DEFAULT)
